@@ -8,7 +8,7 @@
             <form action="" class="form-search">
             <label for="deviceKeyword">设备关键字:</label>
               <input class="form-content" type="text" name="" id="deviceKeyword" v-model="deviceKeyword" placeholder="请输入设备关键字">
-              <el-button type="primary" icon="el-icon-search" class="device-btn" @click="getDeviceById">搜索</el-button>
+              <el-button type="primary" icon="el-icon-search" class="device-btn" @click="getDeviceBykeyWord">搜索</el-button>
               <el-button type="primary" icon="el-icon-arrow-left" class="device-btn" round v-show="back" @click="backClick">返回</el-button>
             </form>
             <div class="addDevice">
@@ -126,13 +126,13 @@
           for(var i = 0; i < this.tableData.length; i++) {
             // 根据设备id获取对应传感器数据
             if(this.tableData[i].deviceId === this.deviceMessage['deviceId']) {
-              this.tableData[i].tem = this.deviceMessage['tem'] + '℃'
-              this.tableData[i].hum = this.deviceMessage['hum'] + '%'
-              this.tableData[i].smoke = this.deviceMessage['smoke'] + 'ppm'
+              this.tableData[i].tem = this.deviceMessage['tem']
+              this.tableData[i].hum = this.deviceMessage['hum']
+              this.tableData[i].smoke = this.deviceMessage['smoke']
             }else {
-              this.tableData[i].tem = '0' + '℃'
-              this.tableData[i].hum = '0' + '%'
-              this.tableData[i].smoke = '0' + 'ppm'
+              this.tableData[i].tem = 'N/A'
+              this.tableData[i].hum = 'N/A'
+              this.tableData[i].smoke = 'N/A'
             }
             // 判断设备状态
             this.tableData[i].status == 1 ?  this.tableData[i].status = "运行" : this.tableData[i].status =  "维护"
@@ -228,11 +228,11 @@
         this._getEquipmentData(index, this.size)
       },
       // 根据设备关键字获取设备信息
-      getDeviceById() {
+      getDeviceBykeyWord() {
         let cur = ""
-        let sized = ""
+        let siz = ""
         // 发送搜索请求
-        this._getEquipmentData( cur, sized, this.deviceKeyword)
+        this._getEquipmentData( cur, siz, this.deviceKeyword)
         this.back = true
       },
       // 返回首页
@@ -244,7 +244,7 @@
       requestWs() {
         // 发送ws请求
         // 192.168.43.159:8080
-        sendWebsocket('ws://192.168.149.39:8080/ws', null, this.wsMessage, this.wsError)
+        sendWebsocket('ws://192.168.137.247:8080/ws', null, this.wsMessage, this.wsError)
       },
       // 对获取的后端传感器最新数据处理
       wsMessage(data) {

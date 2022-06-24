@@ -62,6 +62,24 @@
       updateUserRole(uid, rid) {
         updateRole(uid, rid).then(res => {
           console.log(res);
+          // 对请求结果进行判断
+          if(res.status === 100) {
+            this.$message({
+              showClose: true,
+              message: '更新职位成功',
+              type: 'success'
+            })
+            // 页面重定向
+            setTimeout(function(){
+              location.reload()
+            },1000)
+          } else {
+            this.$message({
+              showClose: true,
+              message: ' 发生未知错误, 更新职位失败',
+              type: 'error'
+            })
+          }
         })
       },
       buildClick() {

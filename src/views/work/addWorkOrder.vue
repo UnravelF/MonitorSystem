@@ -34,7 +34,7 @@
               type="textarea"
               placeholder="请输入内容"
               v-model="description"
-              maxlength="50"
+              maxlength="100"
               show-word-limit>
         </el-input>
       </div>
@@ -88,9 +88,13 @@
           if(res.status === 100) {
             this.$message({
               showClose: true,
-              message: '恭喜你，新建工单成功',
+              message: '新建工单成功',
               type: 'success'
             })
+            // 页面重定向
+            setTimeout(function(){
+              location.reload()
+            },1000)
           } else {
             this.$message({
               showClose: true,

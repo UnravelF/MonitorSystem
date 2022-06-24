@@ -56,22 +56,24 @@ export default {
         // 发送登录请求
         login(this.userInfo.userName, this.userInfo.password).then(res => {
           console.log(res);
-          // 存储登录返回的Token
-          Auth.setToken(res.data);
+          // 存储登录的用户信息
+          this.$store.state.loginUser = res.data
           // 记录登录状态
           this.loginStatus = res.status
           // 对请求结果进行判断
           // 登录成功
           if(this.loginStatus) {
             if(this.loginStatus === 100) {
+              // 存储登录返回的Token
+              Auth.setToken(res.data.token);
               this.$router.push({ path: "/" });
             } else {
-              this.$message('用户名或密码错误')
+              this.$message('用户已停用或用户已注销')
             }
           }
         })
       }else {
-        this.$message('未输入用户名或密码');
+        this.$message('用户已停用或用户已注销');
       }
     }
   }

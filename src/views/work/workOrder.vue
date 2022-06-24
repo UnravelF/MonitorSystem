@@ -141,7 +141,9 @@
                 message: '状态修改成功!'
               });
               // 页面重定向
-              location.reload()
+              setTimeout(function(){
+                location.reload()
+              },1000)
             } else {
               this.$message({
                 showClose: true,
@@ -172,6 +174,10 @@
                 type: 'success',
                 message: '删除工单成功!'
               });
+              // 页面重定向
+              setTimeout(function(){
+                location.reload()
+              },1000)
             } else {
               this.$message({
                 showClose: true,

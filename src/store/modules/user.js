@@ -5,7 +5,7 @@ const user = {
     user: {},
     role: [],
     routers: router.options.routes,
-    dynamicRouters: []
+    dynamicRouters: [],
   },
 
   mutations: {

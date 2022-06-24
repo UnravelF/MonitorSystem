@@ -1,5 +1,6 @@
 <template>
   <div class="block">
+    <el-empty description="暂无报警记录" v-if="alert"></el-empty>
     <ul class="infinite-list" v-infinite-scroll="load" style="overflow:auto">
       <el-timeline>
         <li class="infinite-list-item" v-for="(item, index) in warnData" :key="index" >
@@ -29,7 +30,8 @@
         // 获取数据数目
         size: 8,
         // 存储报警信息数组
-        warnData: []
+        warnData: [],
+        alert: true
       }
     },
     created() {
@@ -45,6 +47,9 @@
           this.warnData = res.data.logList
           console.log(this.warnData)
           console.log(res);
+          if(res.data.total > 0) {
+            this.alert = false
+          } 
         })
       },
       // 滚动到底部事件

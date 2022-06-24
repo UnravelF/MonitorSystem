@@ -76,9 +76,13 @@
           if(res.status === 100) {
             this.$message({
               showClose: true,
-              message: '恭喜你，新建设备成功',
+              message: '新建设备成功',
               type: 'success'
             })
+            // 页面刷新
+            setTimeout(function(){
+              location.reload()
+            },500)
           }else {
             this.$message({
               showClose: true,

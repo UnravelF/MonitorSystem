@@ -70,15 +70,15 @@ const user = {
           parentId: 4,
           component: 'work/workOrder'
         },
-        {
-          id: 6,
-          path: 'form',
-          name: '运维工单',
-          enName: 'Form',
-          icon: 'fa fa-wpforms',
-          parentId: 4,
-          component: 'work/form'
-        }
+        // {
+        //   id: 6,
+        //   path: 'form',
+        //   name: '运维工单',
+        //   enName: 'Form',
+        //   icon: 'fa fa-wpforms',
+        //   parentId: 4,
+        //   component: 'work/form'
+        // }
       ]
     },
     {

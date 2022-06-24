@@ -100,6 +100,14 @@ export default {
     }
   },
   created() {
+
+  },
+  mounted() {
+    this.initLineChart();
+    this.initPieChart();
+    this.initHistogramChart();
+    this.initChinaChart();
+
     // 请求设备总数
     this.getDevice()
     // 请求用户总数
@@ -108,12 +116,6 @@ export default {
     this.getOrder()
     // 请求警报总数
     this.getLog()
-  },
-  mounted() {
-    this.initLineChart();
-    this.initPieChart();
-    this.initHistogramChart();
-    this.initChinaChart();
   },
   methods: {
     // 获取设备总数

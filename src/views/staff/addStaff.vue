@@ -10,7 +10,7 @@
         </div>
         <div class="staff">
           <el-form-item label="密码：" prop="password">
-            <el-input type="text" v-model="staffinfo.password"></el-input>
+            <el-input type="text" v-model="staffinfo.password" show-password></el-input>
           </el-form-item>
         </div>
         <div class="staff">
@@ -122,6 +122,10 @@
               message: '恭喜你，新建人员成功',
               type: 'success'
             });
+            // 页面重定向
+            setTimeout(function(){
+              location.reload()
+            },1000)
           } else {
             this.$message({
               showClose: true,

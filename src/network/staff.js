@@ -74,15 +74,19 @@ export function updateStatus(id, status) {
 }
 
 // 根据用户id获取用户信息
+export function getUserById(id) {
+  return request({
+    url: '/user/' + id
+  })
+}
 
 // 更新用户信息
-export function updateUser(id, nickName, password, email, phone, sex) {
+export function updateUser(id, nickName, email, phone, sex) {
   return request({
     url: '/user/' + id,
     method: 'put',
     data: {
       nickName,
-      password,
       email,
       phone,
       sex

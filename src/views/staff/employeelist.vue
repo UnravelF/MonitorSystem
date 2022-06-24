@@ -6,8 +6,8 @@
           <div slot="header" class="clearfix">
             <form action="" class="form-search">
               <label for="staffId">人员搜索:</label>
-                <input class="form-content" type="text" name="" id="staffId" placeholder="请输入">
-              <input type="submit" value="查询" class="form-sub">
+                <input class="form-content" type="text" v-model="userkeyWord" id="staffId" placeholder="请输入用户关键字">
+                <el-button type="primary" icon="el-icon-search" class="device-btn" @click="getUserkeyWord">搜索</el-button>
             </form>
             <div class="add">
               <button @click="addClick">
@@ -20,7 +20,7 @@
               </template>
               <!-- 修改人员信息表单 -->
               <template  v-if="showeditForm">
-                <edit-staff @editStaff="editStaff" @cancelEdit="cancelEdit"/>
+                <edit-staff @editStaff="editStaff" @cancelEdit="cancelEdit" :uid="userId"/>
               </template>
             </div>
           </div>
@@ -33,8 +33,8 @@
             <el-table-column prop="sex" label="性别" width="120"></el-table-column>
             <el-table-column prop="createTime" label="创建时间" width="200"></el-table-column>
             <el-table-column prop="updateTime" label="更新时间" show-overflow-tooltip></el-table-column>
-            <el-table-column prop="status" label="用户状态">
-              <template slot-scope="scope" >
+            <el-table-column label="用户状态" width="100" align="center">
+              <template slot-scope="scope">
                 <el-switch
                   style="display: block"
                   v-model="scope.row.status"
@@ -66,7 +66,7 @@
 </template>
 
 <script>
-  import {getStaffData, deleteUser} from '../../network/staff'
+  import {getStaffData, updateStatus, deleteUser} from '../../network/staff'
 
   import AddStaff from './addStaff'
   import EditStaff from './editStaff'
@@ -78,12 +78,6 @@ export default {
   },
   data() {
     return {
-      pageBackground: false,
-      styleValue: "false",
-      optionsArr: ["total", "prev", "pager", "next"],
-      pageOptions: ["total", "prev", "pager", "next"],
-      showHelpTip1: false,
-      dropType: "row",
       staffData: [],
       // 分页数
       current: 1,
@@ -91,7 +85,11 @@ export default {
       // 添加职工信息弹框
       showaddForm: false,
       // 编辑职工信息弹框
-      showeditForm: false
+      showeditForm: false,
+      // 存储对应用户id
+      userId: "",
+      // 用户关键词
+      userkeyWord: ""
     }
   },
   created() {
@@ -108,6 +106,10 @@ export default {
         console.log(res);
         // 获取用户总数
         this.staffData = res.data.userList
+        // 将status转为number型方便改变switch状态
+        this.staffData.forEach(item => {
+          item.status = parseInt(item.status)
+        })
       })
     },
     // 新增设备点击事件
@@ -126,14 +128,38 @@ export default {
     },
     // 修改人员状态
     statusChange(row) {
+      console.log(row);
       console.log(row.status);
       console.log(typeof(row.status));
+
+      updateStatus(row.id, row.status).then(res => {
+        console.log(res);
+        if( res.status === 100) {
+            // 修改用户状态成功
+            this.$message({
+              type: 'success',
+              message: '修改该用户状态成功!'
+            });
+            // 页面重定向
+            setTimeout(function(){
+              location.reload()
+            },1000)
+          } else {
+            // 修改用户状态失败
+            this.$message({
+              type: 'success',
+              message: '发生未知错误，修改失败!'
+            });
+          }
+
+      })
     },
     // 编辑用户信息点击事件
     editClick(index, row) {
       console.log(index);
       console.log(row);
       this.showeditForm = true
+      this.userId = row.id
     },
     // 删除用户信息点击事件
     deleteClick(index, row) {
@@ -152,6 +178,10 @@ export default {
               type: 'success',
               message: '删除成功!'
             });
+            // 页面重定向
+            setTimeout(function(){
+              location.reload()
+            },1000)
           } else {
             // 删除成功
             this.$message({
@@ -173,6 +203,13 @@ export default {
       this.$nextTick(() => {
         this.showeditForm = false
       })
+    },
+    // 根据用户关键词搜索用户
+    getUserkeyWord() {
+      let cur = ""
+      let siz = ""
+      // 发送搜索请求
+      this.getStaff(cur, siz, this.userkeyWord)
     }
   },
   
@@ -252,5 +289,9 @@ export default {
 /* 添加设备成功后提示信息样式 */
 .addMessage {
   display: none;
+}
+
+.device-btn {
+  margin-left: 10px;
 }
 </style>
