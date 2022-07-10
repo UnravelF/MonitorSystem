@@ -70,13 +70,29 @@ Monitoring system 是一个前端解决方案，基于 vue 2 和 element-ui 2.12
 
 ### 系统截图
 
-<video src="系统演习视频/多设备监测（字幕+解说）.mp4"></video>
+系统首页
 
-<video src="系统演习视频/设备预警与报警记录（字幕 + 解说）.mp4"></video>
+![img](README.assets/clip_image002.gif)
 
-<video src="系统演习视频/设备报修与维修（字幕 + 解说）.mp4"></video>
+多设备监测
 
-<video src="系统演习视频/人员管理（字幕 + 解说）.mp4"></video>
+![img](README.assets/clip_image002-16574374956183.gif)
+
+设备预警与报警记录
+
+![img](README.assets/clip_image002-16574375314485.gif)
+
+工单管理
+
+![img](README.assets/clip_image002-16574375542857.gif)
+
+人员管理
+
+![img](README.assets/clip_image002-16574375671909.gif)
+
+职位管理
+
+![img](README.assets/clip_image002-165743758100011.gif)
 
 
 ### 安装步骤
