@@ -72,37 +72,25 @@ Monitoring system 是一个前端解决方案，基于 vue 2 和 element-ui 2.12
 
 系统首页
 
-https://raw.githubusercontent.com/UnravelF/MonitorSystem/master/README.assets/clip_image002.gif
-
 ![clip_image002](README.assets/clip_image002.gif)
 
 多设备监测
-
-https://raw.githubusercontent.com/UnravelF/MonitorSystem/master/README.assets/clip_image002-16574374956183.gif
 
 ![clip_image002-16574374956183](README.assets/clip_image002-16574374956183.gif)
 
 设备预警与报警记录
 
-https://raw.githubusercontent.com/UnravelF/MonitorSystem/master/README.assets/clip_image002-16574375314485.gif
-
-![clip_image002-16574375314485](README.assets/clip_image002-16574375314485-16574403369361.gif)
+![clip_image002-16574375314485](README.assets/clip_image002-16574375314485.gif)
 
 工单管理
-
-https://raw.githubusercontent.com/UnravelF/MonitorSystem/master/README.assets/clip_image002-16574375542857.gif
 
 ![clip_image002-16574375542857](README.assets/clip_image002-16574375542857.gif)
 
 人员管理
 
-https://raw.githubusercontent.com/UnravelF/MonitorSystem/master/README.assets/clip_image002-16574375671909.gif
-
 ![clip_image002-16574375671909](README.assets/clip_image002-16574375671909.gif)
 
 职位管理
-
-https://raw.githubusercontent.com/UnravelF/MonitorSystem/master/README.assets/clip_image002-165743758100011.gif
 
 ![clip_image002-165743758100011](README.assets/clip_image002-165743758100011.gif)
 
