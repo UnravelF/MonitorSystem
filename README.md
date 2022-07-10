@@ -72,27 +72,27 @@ Monitoring system 是一个前端解决方案，基于 vue 2 和 element-ui 2.12
 
 系统首页
 
-![img](README.assets/clip_image002.gif)
+https://raw.githubusercontent.com/UnravelF/MonitorSystem/master/README.assets/clip_image002-16574374956183.gif
 
 多设备监测
 
-![img](README.assets/clip_image002-16574374956183.gif)
+https://raw.githubusercontent.com/UnravelF/MonitorSystem/master/README.assets/clip_image002-16574375314485.gif
 
 设备预警与报警记录
 
-![img](README.assets/clip_image002-16574375314485.gif)
+https://raw.githubusercontent.com/UnravelF/MonitorSystem/master/README.assets/clip_image002-16574375542857.gif
 
 工单管理
 
-![img](README.assets/clip_image002-16574375542857.gif)
+https://raw.githubusercontent.com/UnravelF/MonitorSystem/master/README.assets/clip_image002-16574375671909.gif
 
 人员管理
 
-![img](README.assets/clip_image002-16574375671909.gif)
+https://raw.githubusercontent.com/UnravelF/MonitorSystem/master/README.assets/clip_image002-165743758100011.gif
 
 职位管理
 
-![img](README.assets/clip_image002-165743758100011.gif)
+https://raw.githubusercontent.com/UnravelF/MonitorSystem/master/README.assets/clip_image002.gif
 
 
 ### 安装步骤
