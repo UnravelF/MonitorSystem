@@ -14,7 +14,7 @@
   </a>
 </div>
 
-Monitoring system 是一个前端解决方案，基于 vue 2 和 element-ui 2.12.0 开发的后台管理系统。功能实时记录多台设备温度、湿度、烟雾浓度，超过阈值报警提示，管理工单，用户，设备等多种丰富组件。能够快速帮助中小型企业搭建后台产品模型。
+Monitoring system 是一个前端解决方案，基于 vue 2 和 element-ui 2.12.0 开发的后台管理系统。功能实时记录多台设备温度、湿度、烟雾浓度，超过阈值报警提示，管理工单，用户，设备等多种丰富组件。
 
 
 ### 功能简介
@@ -74,19 +74,21 @@ Monitoring system 是一个前端解决方案，基于 vue 2 和 element-ui 2.12
 
 多设备监测功能
 
-<video src="E:/课程报告/大三下学期/物联网工程设计与实践/演示视频/多设备监测（字幕+解说）.mp4"></video>
+<video src="系统演习视频/多设备监测（字幕+解说）.mp4"></video>
 
 设备预警与报警记录功能
 
-<video src="E:/课程报告/大三下学期/物联网工程设计与实践/演示视频/设备预警与报警记录（字幕 + 解说）.mp4"></video>
+<video src="系统演习视频/设备预警与报警记录（字幕 + 解说）.mp4"></video>
+
+
 
 设备报修与维修功能
 
-<video src="E:/课程报告/大三下学期/物联网工程设计与实践/演示视频/设备报修与维修（字幕 + 解说）.mp4"></video>
+<video src="系统演习视频/设备报修与维修（字幕 + 解说）.mp4"></video>
 
 人员管理功能
 
-<video src="E:/课程报告/大三下学期/物联网工程设计与实践/演示视频/人员管理（字幕 + 解说）.mp4"></video>
+<video src="系统演习视频/人员管理（字幕 + 解说）.mp4"></video>
 
 
 
@@ -126,4 +128,4 @@ npm run build
 ---
 本项目部分灵感来源于其他开源项目el-admin 、imcoder-cloud/imcoder-admin
 
-[www.imcoder.fun/imcoder-admin]()
+[https://github.com/imcoder-cloud/imcoder-admin]()
